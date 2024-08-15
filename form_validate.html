@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" onsubmit="return validate()">
+        <table>
+            <tr>
+                <td>
+                    <h3>Name: </h3>
+                </td>
+                <td>
+                    <input type="text" name="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Password: </h3>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<script>
+    function validate(){
+        var name = document.getElementById("name").value;
+        var pwd = document.getElementById("password").value;
+        if(name == null || name == ""){
+            alert("Name cannot be blank");
+            return false;
+        }
+        else if(pwd == null || pwd == ""){
+            alert("Password cannot be blank");
+            return false;
+        }
+        else if(pwd.length < 8){
+            alert("Password length too short");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+</html>
